@@ -1,0 +1,8 @@
+[
+    {"q": "What is FDA?", "expected_agent": "regulatory"},
+    {"q": "What is EMA?", "expected_agent": "regulatory"},
+    {"q": "What is Phase 3 clinical trial?", "expected_agent": "clinical"},
+    {"q": "What is an adverse event?", "expected_agent": "clinical"},
+    {"q": "Explain GMP.", "expected_agent": "regulatory"}
+  ]
+  

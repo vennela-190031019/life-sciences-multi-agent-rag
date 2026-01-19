@@ -1,0 +1,6 @@
+Phase 1 clinical trials focus on safety and dosage in a small group of healthy volunteers or patients.
+Phase 2 clinical trials evaluate efficacy and side effects in a larger group of patients with the disease.
+Phase 3 clinical trials confirm effectiveness, monitor side effects, and compare to standard treatments in large patient populations.
+
+The FDA (Food and Drug Administration) is the regulatory body in the United States that approves new drugs.
+The EMA (European Medicines Agency) is the regulatory authority for the European Union.

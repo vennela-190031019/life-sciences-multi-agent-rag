@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+openai>=1.0.0
+
+langchain
+langchain-openai
+langchain-community
+faiss-cpu
+tiktoken
