@@ -1,18 +1,22 @@
 # life-sciences-multi-agent-rag
+
 Life Sciences Multi-Agent RAG Chatbot
 
 A simple GenAI chatbot for Life Sciences that answers questions using a knowledge base, routes queries to specialized agents, and prevents hallucinations.
 
 Built as part of a GenAI Internship Project.
 
+---
+
 ## What this project does
 
-- Accepts user questions through a web UI
-- Routes the question to the right expert agent
-- Retrieves relevant content from a knowledge base (RAG)
-- Generates grounded answers
-- Blocks answers if information is not available
+- Accepts user questions through a web UI  
+- Routes the question to the right expert agent  
+- Retrieves relevant content from a knowledge base (RAG)  
+- Generates grounded answers  
+- Blocks answers if information is not available  
 
+---
 
 ## Architecture (Simple View)
 
@@ -28,29 +32,3 @@ flowchart TD
     G --> S
     N --> S
     S --> A[Final Answer]
-
-
-Technologies Used
-
-FastAPI – backend server
-
-LangChain – LLM integration
-
-LangGraph – multi-agent routing
-
-FAISS – vector search
-
-OpenAI – embeddings and LLM
-
-HTML / JavaScript – simple UI
-
-Project Structure
-simple-rag-bot/
-├── main.py
-├── graph_agents.py
-├── rag_basic.py
-├── data/
-│   └── knowledge.txt
-├── README.md
-├── requirements.txt
-├── .gitignore
