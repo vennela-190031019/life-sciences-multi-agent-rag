@@ -5,7 +5,10 @@ from typing import List
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores import FAISS
 
-DATA_PATH = os.path.join("data", "knowledge.txt")
+# Make path reliable regardless of where you run uvicorn from
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_PATH = os.path.join(BASE_DIR, "data", "knowledge.txt")
+
 
 def load_knowledge_text() -> str:
     if not os.path.exists(DATA_PATH):
@@ -13,30 +16,35 @@ def load_knowledge_text() -> str:
     with open(DATA_PATH, "r", encoding="utf-8") as f:
         return f.read()
 
-def simple_chunk_text(text: str, chunk_size: int = 500, overlap: int = 100) -> List[str]:
+
+def simple_chunk_text(text: str, chunk_size: int = 500, overlap: int = 120) -> List[str]:
+    text = text.strip()
     if not text:
         return []
+
     chunks = []
     start = 0
-    text_len = len(text)
+    n = len(text)
 
-    while start < text_len:
-        end = min(start + chunk_size, text_len)
+    while start < n:
+        end = min(start + chunk_size, n)
         chunk = text[start:end].strip()
         if chunk:
             chunks.append(chunk)
-        if end == text_len:
+
+        if end == n:
             break
         start = max(0, end - overlap)
 
     return chunks
 
+
 def build_retriever(k: int = 3):
     text = load_knowledge_text()
     if not text.strip():
-        text = "This is an empty knowledge base. No domain info available."
+        text = "Knowledge base is empty. Add content to data/knowledge.txt."
 
-    chunks = simple_chunk_text(text, chunk_size=500, overlap=100)
+    chunks = simple_chunk_text(text)
 
     embeddings = OpenAIEmbeddings()
     metadatas = [{"source": "knowledge.txt", "chunk_id": i} for i in range(len(chunks))]
