@@ -1,8 +1,6 @@
-# life-sciences-multi-agent-rag
+# Life Sciences Multi-Agent RAG Chatbot
 
-Life Sciences Multi-Agent RAG Chatbot
-
-A simple GenAI chatbot for Life Sciences that answers questions using a knowledge base, routes queries to specialized agents, and prevents hallucinations.
+A production-style GenAI chatbot for Life Sciences that answers questions using a knowledge base, routes queries to specialized agents, and prevents hallucinations using a safety validation layer.
 
 Built as part of a GenAI Internship Project.
 
@@ -11,10 +9,10 @@ Built as part of a GenAI Internship Project.
 ## What this project does
 
 - Accepts user questions through a web UI  
-- Routes the question to the right expert agent  
-- Retrieves relevant content from a knowledge base (RAG)  
-- Generates grounded answers  
-- Blocks answers if information is not available  
+- Routes queries to specialized agents (clinical, regulatory, general)  
+- Retrieves relevant context using Retrieval-Augmented Generation (RAG)  
+- Generates grounded and domain-specific answers  
+- Prevents hallucinations using a safety validator  
 
 ---
 
