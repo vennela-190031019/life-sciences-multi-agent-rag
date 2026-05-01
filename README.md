@@ -20,7 +20,7 @@ Built as part of a GenAI Internship Project.
 
 ## Live Demo
 
-https://your-render-url.onrender.com   
+[Open Live App] https://life-sciences-multi-agent-rag.onrender.com
 
 ---
 
