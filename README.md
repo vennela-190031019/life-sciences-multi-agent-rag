@@ -14,6 +14,14 @@ Built as part of a GenAI Internship Project.
 - Generates grounded and domain-specific answers  
 - Prevents hallucinations using a safety validator  
 
+
+---
+
+
+## Live Demo
+
+https://your-render-url.onrender.com   
+
 ---
 
 ## Architecture (Simple View)
@@ -29,8 +37,4 @@ flowchart TD
     C --> S[Safety Validator]
     G --> S
     N --> S
-    S --> A[Final Answer]
-
-## Live Demo
-
-https://your-render-url.onrender.com    
+    S --> A[Final Answer] 
